@@ -20,7 +20,7 @@ public class VictoryFinisihed : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		animator.gameObject.transform.parent.gameObject.GetComponent<PlayerMover>().canMove = true;
+		animator.gameObject.transform.gameObject.GetComponent<PlayerMover>().canMove = true;
 		Camera.main.GetComponent<CinemachineBrain>().enabled = false;  
 	}
 

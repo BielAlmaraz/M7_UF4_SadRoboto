@@ -17,10 +17,13 @@ public class OrbCollector : MonoBehaviour
 		if (other.gameObject.TryGetComponent<ICollectable>(out ICollectable icoll))
 		{
 			icoll.OnCollected();
+			// if (icoll is Orb)
+			// {
 				_animator.SetTrigger("Collected");
 				_animator.SetLayerWeight(1, 1);
 				Camera.main.GetComponent<CinemachineBrain>().enabled = true;
 				GetComponent<PlayerMover>().canMove = false;
+			// }
 		}
 	}
 

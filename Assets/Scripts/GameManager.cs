@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour
 		ThunderText.text = "Thunders: " + Orbs;
 	}
 
-	public void CoinCollected()
+	public void CoinCollected(int i)
 	{
-		Coins++;
+		Coins+= 1;
 		CoinText.text = "Coins: " + Coins;
 	}
 
