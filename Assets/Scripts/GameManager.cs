@@ -8,9 +8,10 @@ public class GameManager : MonoBehaviour
 
 {
 	public TextMeshProUGUI CoinText, ThunderText;
-	public Image[] Items;
+	public Image[] items;
 	public static GameManager gameManager;
 	public int Orbs = 0, Coins = 0;
+	public bool reset;
 
 	private void Awake()
 	{
@@ -32,8 +33,13 @@ public class GameManager : MonoBehaviour
 
 	public void CoinCollected(int i)
 	{
-		Coins+= 1;
+		Coins+= i;
 		CoinText.text = "Coins: " + Coins;
+	}
+
+	public void GetItem(Sprite sprite, int i)
+	{
+		items[i].sprite = sprite;
 	}
 
 	public interface ICollectable
@@ -43,6 +49,6 @@ public class GameManager : MonoBehaviour
 
 	public void ItemCollected(Sprite sprite, int id)
 	{
-		Items[id].sprite = sprite;
+		items[id].sprite = sprite;
 	}
 }
